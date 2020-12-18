@@ -1,0 +1,39 @@
+{
+  "type": "datasource",
+  "name": "alertmanager",
+  "id": "lalaux-alertmanager-ds",
+  "metrics": true,
+  "info": {
+    "description": "An alertmanager datasrource plugin",
+    "author": {
+      "name": "Amnon Heiman",
+      "url": "www.lalaux.com"
+    },
+    "keywords": [
+      "alertmanager",
+      "prometheus"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/grafana/simple-datasource"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/grafana/simple-datasource/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaVersion": "6.5.x",
+    "plugins": []
+  }
+}
+

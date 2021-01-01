@@ -25,7 +25,7 @@ artifacts/
 work/
 ci/
 e2e-results/
-
+lalaux-alertmanager-ds*
 # Editor
 .idea
 .project

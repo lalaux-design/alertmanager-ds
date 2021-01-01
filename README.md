@@ -1,13 +1,20 @@
-# Grafana Data Source Plugin Template
+# Alertmanager Grafana Data Source Plugin
 
-[![CircleCI](https://circleci.com/gh/grafana/simple-datasource/tree/master.svg?style=svg)](https://circleci.com/gh/grafana/simple-datasource/tree/master)
+This is an implementation of an Alertmanager plugin for Grafana version 7.0 and up.
 
-This template is a starting point for building Grafana Data Source Plugins
+## What is Alertmanager
+The [Prometheus Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) handles alerts sent by client applications such as the Prometheus server.
 
-## What is Grafana Data Source Plugin?
-Grafana supports a wide range of data sources, including Prometheus, MySQL, and even Datadog. There’s a good chance you can already visualize metrics from the systems you have set up. In some cases, though, you already have an in-house metrics solution that you’d like to add to your Grafana dashboards. Grafana Data Source Plugins enables integrating such solutions with Grafana.
+It is very helpful to use it as a data source for grafana.
 
-## Getting started
+This data-source implementation support both the alertmanager V2 API and the new Grafana 7.0 API.
+
+### The severity label
+Typically, an alert would have a severity label. The implementation does not make any assumption on the severity label, but if all values of the label are number,
+it will be reported as a number, which means that if you stick to numbers, you can use it with graphs and not only with tables.
+There are no number-to-text mapping done in this plugin. Instead, you can do it on the Dashboard.
+
+## Compile it yourself
 1. Install dependencies
 ```BASH
 yarn install
@@ -24,9 +31,8 @@ yarn watch
 ```BASH
 yarn build
 ```
+## Configuration
+Currently, the only plugin configuration is the alertmanger address (ip and port).
 
-## Learn more
-- [Build a data source plugin tutorial](https://grafana.com/tutorials/build-a-data-source-plugin)
-- [Grafana documentation](https://grafana.com/docs/)
-- [Grafana Tutorials](https://grafana.com/tutorials/) - Grafana Tutorials are step-by-step guides that help you make the most of Grafana
-- [Grafana UI Library](https://developers.grafana.com/ui) - UI components to help you build interfaces using Grafana Design System
+## Query
+Currently, you can only have one filter in the query.

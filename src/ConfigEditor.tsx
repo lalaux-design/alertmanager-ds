@@ -32,7 +32,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
             inputWidth={20}
             onChange={this.onPathChange}
             value={jsonData.url || ''}
-            placeholder="json field returned to frontend"
+            placeholder="127.0.0.1:9093"
           />
         </div>
       </div>
